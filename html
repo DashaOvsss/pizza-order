@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Форма замовлення піци</title>
+</head>
+<body>
+<h1>Форма замовлення піци</h1>
+
+<form id="pizzaForm" onsubmit="return validateForm()">
+  <table>
+    <tr>
+      <th>Ім'я:</th>
+      <td><input type="text" id="name" name="name" required></td>
+    </tr>
+    <tr>
+      <th>Електронна пошта:</th>
+      <td><input type="email" id="email" name="email" required></td>
+    </tr>
+    <tr>
+      <th>Телефон:</th>
+      <td><input type="text" id="phone" name="phone" required></td>
+    </tr>
+    <tr>
+      <th>Адреса:</th>
+      <td><textarea id="address" name="address" rows="3" required></textarea></td>
+    </tr>
+    <tr>
+      <th>Піца:</th>
+      <td>
+        <select id="pizza" name="pizza" required>
+          <option value="">Виберіть піцу</option>
+          <option value="supreme">Supreme</option>
+          <option value="vegetarian">Vegetarian</option>
+          <option value="hawaiian">Hawaiian</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>Соус:</th>
+      <td>
+        <input type="radio" id="sauceTomato" name="sauce" value="tomato" checked>
+        <label for="sauceTomato">Томатний</label><br>
+        <input type="radio" id="sauceGarlic" name="sauce" value="garlic">
+        <label for="sauceGarlic">Часниковий</label>
+      </td>
+    </tr>
+    <tr>
+      <th>Додаткові інгредієнти:</th>
+      <td>
+        <input type="checkbox" id="extraCheese" name="extraCheese">
+        <label for="extraCheese">Додатковий сир</label><br>
+        <input type="checkbox" id="glutenFreeBase" name="glutenFreeBase">
+        <label for="glutenFreeBase">Безглютенова основа</label>
+      </td>
+    </tr>
+    <tr>
+      <th>Інструкції щодо доставки:</th>
+      <td><textarea id="deliveryInstructions" name="deliveryInstructions"></textarea></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button type="submit">Відправити замовлення</button></td>
+    </tr>
+  </table>
+</form>
+
+<script>
+  function validateForm() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
+    const pizza
